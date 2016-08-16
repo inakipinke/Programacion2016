@@ -9,13 +9,15 @@ public class Jugador {
     public String nacionalidad;
     public Float altura;
     public Float peso;
-    private Puntos puntos;
+    private Puntos2 puntos;
+    private Puntos2 games;
 
     //EL JUGADOR TIENE SU PROPIO MARCADOR DONDE SE VEN REFLEJADOS LOS PUNTOS QUE HAYA ANOTADO.
+    
     public Jugador() {
     }
 
-    public Jugador(String nombre, Puntos puntos, String apellido, int año_de_nacimiento, int mes_de_nacimiento, int día_de_nacimiento, String nacionalidad, Float altura, Float peso) {
+    public Jugador(String nombre, Puntos2 puntos,Puntos2 games, String apellido, int año_de_nacimiento, int mes_de_nacimiento, int día_de_nacimiento, String nacionalidad, Float altura, Float peso) {
         this.nombre = nombre;
         this.año_de_nacimiento = año_de_nacimiento;
         this.mes_de_nacimiento = mes_de_nacimiento;
@@ -24,7 +26,8 @@ public class Jugador {
         this.nacionalidad = nacionalidad;
         this.altura = altura;
         this.peso = peso;
-        this.puntos = new Puntos();
+        this.puntos = new Puntos2();
+        this.games = new Puntos2();
     }
 
     public String getNombre() {
@@ -91,17 +94,27 @@ public class Jugador {
         this.peso = peso;
     }
 
-    public Puntos getPuntos() {
+    public Puntos2 getPuntos() {
         return puntos;
     }
 
-    public void setPuntos(Puntos puntos) {
+    public void setPuntos2(Puntos2 puntos) {
         this.puntos = puntos;
     }
 
+    public Puntos2 getGames2() {
+        return games;
+    }
+
+    public void setGames2(Puntos2 games) {
+        this.games = games;
+    }
+    
+    
     public void aumentar_Puntos() {
-        if (puntos.getPuntos() == 0) {
-            puntos.setPuntos(puntos.getPuntos()+15);
+        int puntos_aux = 0 ;
+        if (puntos.getPuntos() == puntos_aux) {
+            puntos.setPuntos(15);
 
         }
         if (puntos.getPuntos() == 15) {
@@ -117,12 +130,13 @@ public class Jugador {
         }
     }
 
-    public void aumentar_games() {
-        puntos.setSets(puntos.getGames() + 1); 
+    public void aumentar_games() {        
+        puntos.setGames(puntos.getGames() + 1); 
         puntos.setPuntos(puntos.getPuntos() - puntos.getPuntos());
         if (puntos.getGames() == 6) {
             aumentar_sets();
         }
+        
     }
 
     public void aumentar_sets() {
