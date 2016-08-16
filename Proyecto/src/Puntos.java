@@ -3,7 +3,7 @@ import javax.swing.JOptionPane;
 
 public class Puntos {
  
-    private int puntos ;
+    private int punto ;
     private int puntos_ganados;
     private int puntos_jugados;
     private int games ;
@@ -14,20 +14,13 @@ public class Puntos {
     public Puntos() {
     }
 
-    @Override
-    public String toString() {
-        return "Puntos{" + "puntos=" + puntos + ", games=" + games + ", sets=" + sets + '}';
+    
+    public int getPunto() {
+        return punto;
     }
 
-    
-    
-    
-    public int getPuntos() {
-        return puntos;
-    }
-
-    public void setPuntos(int puntos) {
-        this.puntos = puntos;
+    public void setPunto(int puntos) {
+        this.punto = puntos;
     }
 
     public int getGames() {
