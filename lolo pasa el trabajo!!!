@@ -2,7 +2,7 @@ Comandos para pasar un archivo:
 primero pongan el directorio de esta carpeta en una terminal
 hagan un pull: git pull
 ahora pongan los archivos en la carpeta
-pongan "git add ." en terminal
+pongan "git add ." en terminal.  en alguna de estas lineas si les aparece un editor de texto en la terminal solo pongan Ctrl + X
 git commit -m "Comentario"
 les va a pedir que se logeen con sus cuentas de github (en la misma terminal)
 despues de logearse hagan un push: git pull
