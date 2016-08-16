@@ -9,7 +9,7 @@ public class Jugador {
     private String nacionalidad;
     private Float altura;
     private Float peso;
-    private Puntos puntos;
+    private Puntos punto;
     private Puntos games;
     private Puntos sets;
 
@@ -18,7 +18,7 @@ public class Jugador {
     public Jugador() {
     }
 
-    public Jugador(String nombre, Puntos puntos,Puntos games,Puntos sets, String apellido, int año_de_nacimiento, int mes_de_nacimiento, int día_de_nacimiento, String nacionalidad, Float altura, Float peso) {
+    public Jugador(String nombre, Puntos punto,Puntos games,Puntos sets, String apellido, int año_de_nacimiento, int mes_de_nacimiento, int día_de_nacimiento, String nacionalidad, Float altura, Float peso) {
         this.nombre = nombre;
         this.año_de_nacimiento = año_de_nacimiento;
         this.mes_de_nacimiento = mes_de_nacimiento;
@@ -27,7 +27,7 @@ public class Jugador {
         this.nacionalidad = nacionalidad;
         this.altura = altura;
         this.peso = peso;
-        this.puntos = new Puntos();
+        this.punto = new Puntos();
         this.games = new Puntos();
         this.sets = new Puntos();
     }
@@ -104,12 +104,12 @@ public class Jugador {
         this.peso = peso;
     }
 
-    public Puntos getPuntos() {
-        return puntos;
+    public Puntos getPunto() {
+        return punto;
     }
 
-    public void setPuntos(Puntos puntos) {
-        this.puntos = puntos;
+    public void setPunto(Puntos puntos) {
+        this.punto = puntos;
     }
 
     public Puntos getGames() {
@@ -121,36 +121,36 @@ public class Jugador {
     }
  
     public void aumentar_Puntos() {
-        if (puntos.getPuntos() == 0) {
-            puntos.setPuntos(15);
-            System.err.println(nombre + puntos.getPuntos() + "PUNTOS");
+        if (punto.getPunto() == 0) {
+            punto.setPunto(15);
+            System.err.println(nombre + punto.getPunto() + "PUNTOS");
             return;
 
         }
-        if (puntos.getPuntos() == 15) {
-            puntos.setPuntos(30);
-            System.err.println(nombre + puntos.getPuntos() + "PUNTOS");
+        if (punto.getPunto() == 15) {
+            punto.setPunto(30);
+            System.err.println(nombre + punto.getPunto() + "PUNTOS");
             return;
 
         }
-        if (puntos.getPuntos() == 30) {
-            puntos.setPuntos(40);
-            System.err.println(nombre + puntos.getPuntos() + "PUNTOS");
+        if (punto.getPunto() == 30) {
+            punto.setPunto(40);
+            System.err.println(nombre + punto.getPunto() + "PUNTOS");
             return;
 
         }
-        if (puntos.getPuntos() == 40) {
-            Partido.game_ganado();
+        if (punto.getPunto() == 40) {
+            Partido.game_ganado_jug1();
             return;
         }
     }
 
     public void aumentar_games() {        
-        puntos.setGames(puntos.getGames() + 1);
-        System.err.println(nombre + "" + puntos.getGames() + " GAMES ");
-        puntos.setPuntos(puntos.getPuntos() - puntos.getPuntos());
-        System.out.println(puntos.getPuntos() + "");
-        if (puntos.getGames() == 6) {
+        punto.setGames(punto.getGames() + 1);
+        System.err.println(nombre + "" + punto.getGames() + " GAMES ");
+        punto.setPunto(punto.getPunto() - punto.getPunto());
+        System.out.println(punto.getPunto() + "");
+        if (punto.getGames() == 6) {
             aumentar_sets();
             return;
         }
@@ -158,27 +158,25 @@ public class Jugador {
     }
 
     public void aumentar_sets() {
-        
-        puntos.setGames(puntos.getGames() - puntos.getGames());
-        puntos.setPuntos(puntos.getPuntos() - puntos.getPuntos());
-        puntos.setSets(puntos.getSets() - puntos.getSets());
+        punto.setGames(punto.getGames() - punto.getGames());
+        punto.setPunto(punto.getPunto() - punto.getPunto());
+        punto.setSets(punto.getSets() + 1);
         ganar();
     }
 
     public void ganar() {
-        if (puntos.getSets() == Partido.sets_max) {
+        if (punto.getSets() == Partido.sets_max) {
             System.out.println("FINAL");
         }
     }
 
     public void jugados_ganados() {
-        puntos.setPuntos_jugados(puntos.getPuntos_jugados() + 1);
-        puntos.setPuntos_ganados(puntos.getPuntos_ganados() + 1);
+        punto.setPuntos_jugados(punto.getPuntos_jugados() + 1);
+        punto.setPuntos_ganados(punto.getPuntos_ganados() + 1);
     }
     
-    public void saber_puntos(){
-        System.out.println(puntos.getPuntos() + "");
+    public void vale_0(){
+        punto.setPunto(0);
     }
 
-   
 }
