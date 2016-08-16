@@ -7,17 +7,20 @@ public class Puntos {
     private int puntos_ganados;
     private int puntos_jugados;
     private int games ;
-    private int sets ;
+    private int sets;
     private int cant_games;
     private int cant_sets;
-    
+        
     public Puntos() {
     }
 
     @Override
     public String toString() {
-        return "Puntos{" + "puntos=" + puntos + '}';
+        return "Puntos{" + "puntos=" + puntos + ", games=" + games + ", sets=" + sets + '}';
     }
+
+    
+    
     
     public int getPuntos() {
         return puntos;
@@ -58,7 +61,6 @@ public class Puntos {
     public void setPuntos_jugados(int puntos_jugados) {
         this.puntos_jugados = puntos_jugados;
     }
-    
     
     
 }

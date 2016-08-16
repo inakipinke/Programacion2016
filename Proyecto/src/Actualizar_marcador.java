@@ -54,7 +54,7 @@ public class Actualizar_marcador extends javax.swing.JFrame {
             }
         });
 
-        jCombo.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "Opciones:", "Jugador 1", "Jugador 2", "" }));
+        jCombo.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "Opciones:", "Jugador 1", "Jugador 2" }));
         jCombo.addMouseListener(new java.awt.event.MouseAdapter() {
             public void mouseClicked(java.awt.event.MouseEvent evt) {
                 jComboMouseClicked(evt);
@@ -106,32 +106,19 @@ public class Actualizar_marcador extends javax.swing.JFrame {
     private void btnGuardarMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_btnGuardarMouseClicked
         Partido partido = new Partido();
         Jugador[] jugador = Partido.getJugador();
+        Puntos puntos = new Puntos();
         if (jCombo.getSelectedIndex() == 1){
-            System.out.println("OPCION 1 SELECCIONADA");
-            
-            DefaultListModel model = new DefaultListModel();
-            for (int i=0;i<jugador.length;i++) {
-                model.addElement(jugador[i].getNombre());        
-            }
-        jList.setModel(model);
+            for (int i=0;i<jugador.length;i++){
+                jugador[0].aumentar_Puntos();
+            return;
+        }
         
-        for (int i=0;i<jugador.length;i++){
-            jugador[i].aumentar_Puntos();
-            if (jugador[i].getPuntos() != null){    
-                System.out.println("AUMENTANDO ....");
-                model.addElement(jugador[i].getPuntos() + "");
-            }
-        }    
-        jList.setModel(model);
         Anotador anotador = new Anotador();
         anotador.setVisible(true);
         }
-        if (jCombo.getSelectedIndex() == 2){
-            System.out.println("OPCION 2 SELECCIONADA");
+        if (jCombo.getSelectedIndex() == 2){          
+                jugador[1].aumentar_Puntos();
         }
-        
-        
-        
         
     }//GEN-LAST:event_btnGuardarMouseClicked
 

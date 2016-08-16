@@ -1,0 +1,25 @@
+¿Cuál es el problema a resolver?
+
+¿Cuáles son las características del sistema que se utiliza para resolver el problema?
+
+¿Cómo se apoyará el sistema cuando usuarios soliciten correcciones, adaptaciones y mejoras del sistema?
+
+¿Qué información va a ser procesada?
+
+¿Qué función se desea?
+
+¿Qué interfaces van a ser establecidas?
+
+¿Quién está detrás de la solicitud de este trabajo?
+
+¿Quién utilizará la solución?
+
+¿Qué se considera un resultado “correcto”?
+
+¿Cuáles son las restricciones?
+
+¿Cuáles son las entradas?
+
+¿Cuáles son las salidas?
+
+¿Cuál es la forma de almacenamiento?

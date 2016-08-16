@@ -194,9 +194,6 @@ public class Datosjugador2 extends javax.swing.JFrame {
 
     private void jButtonGuardarMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_jButtonGuardarMouseClicked
         String errores = "";
-        int puntos = 0;
-        int sets = 0;
-        int games = 0;
         int año_de_nacimiento = 0;
         int mes_de_nacimiento = 0;
         int día_de_nacimiento = 0;
@@ -684,7 +681,8 @@ public class Datosjugador2 extends javax.swing.JFrame {
             errores += "Debe ingresar un apellido\n";
         }
                    System.out.println("ERROR !!!");
-
+                   
+        Puntos puntos = new Puntos();
         
         Jugador jugador = new Jugador();
         
@@ -695,9 +693,10 @@ public class Datosjugador2 extends javax.swing.JFrame {
         jugador.setDía_de_nacimiento(día_de_nacimiento);
         jugador.setMes_de_nacimiento(mes_de_nacimiento);
         jugador.setAño_de_nacimiento(año_de_nacimiento);
+        jugador.setPuntos(puntos);
+        jugador.setGames(puntos);
+       
         
-        
-
         System.out.println("ERROR !!!");
         
                

@@ -8,20 +8,26 @@ public class Partido {
     public static int diferencia;
     
     public static int errores;
-      
+    
+    private Puntos puntos;
+    
     private static Jugador[] jugador = new Jugador [2];
     
     public static Jugador[] getJugador(){
         return jugador;
     }
+    
+    
         
     public Partido(){
         
     }
     
-    public Partido(int sets_max, int diferencia, Jugador jugador) {
+    public Partido(int sets_max, int diferencia, Puntos puntos) {
         Partido.sets_max = sets_max;
         Partido.diferencia = diferencia;
+        puntos = new Puntos();
+        
     }
 
     public static int getSets_max() {
@@ -39,7 +45,16 @@ public class Partido {
     public static void setDiferencia(int diferencia) {
         Partido.diferencia = diferencia;
     }
+
+    public Puntos getPuntos() {
+        return puntos;
+    }
+
+    public void setPuntos(Puntos puntos) {
+        this.puntos = puntos;
+    }
     
+   
     public static void duración_partido(){
         if (Caracteristica_partido.jComboBox.getSelectedIndex() == 1){
             Partido.sets_max = 1;
@@ -93,5 +108,15 @@ public class Partido {
         }
         return count;
     }
-
+    
+    public static void game_ganado(){
+        for (int i=0;i<jugador.length;i++){
+            if (jugador[0].getPuntos()  != jugador[1].getPuntos()){
+                System.out.println(jugador[1].getPuntos() + "");
+                jugador[0].aumentar_games();
+                return;
+            }       
+        }
+    }
+    
 }
