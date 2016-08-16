@@ -140,7 +140,7 @@ public class Jugador {
 
         }
         if (punto.getPunto() == 40) {
-            Partido.game_ganado_jug1();
+            Partido.game_ganado();
             return;
         }
     }
@@ -149,7 +149,6 @@ public class Jugador {
         punto.setGames(punto.getGames() + 1);
         System.err.println(nombre + "" + punto.getGames() + " GAMES ");
         punto.setPunto(punto.getPunto() - punto.getPunto());
-        System.out.println(punto.getPunto() + "");
         if (punto.getGames() == 6) {
             aumentar_sets();
             return;
