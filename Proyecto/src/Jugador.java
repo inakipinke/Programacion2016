@@ -9,15 +9,15 @@ public class Jugador {
     public String nacionalidad;
     public Float altura;
     public Float peso;
-    private Puntos2 puntos;
-    private Puntos2 games;
+    private Puntos puntos;
+    private Puntos games;
 
     //EL JUGADOR TIENE SU PROPIO MARCADOR DONDE SE VEN REFLEJADOS LOS PUNTOS QUE HAYA ANOTADO.
     
     public Jugador() {
     }
 
-    public Jugador(String nombre, Puntos2 puntos,Puntos2 games, String apellido, int año_de_nacimiento, int mes_de_nacimiento, int día_de_nacimiento, String nacionalidad, Float altura, Float peso) {
+    public Jugador(String nombre, Puntos puntos,Puntos games, String apellido, int año_de_nacimiento, int mes_de_nacimiento, int día_de_nacimiento, String nacionalidad, Float altura, Float peso) {
         this.nombre = nombre;
         this.año_de_nacimiento = año_de_nacimiento;
         this.mes_de_nacimiento = mes_de_nacimiento;
@@ -26,8 +26,8 @@ public class Jugador {
         this.nacionalidad = nacionalidad;
         this.altura = altura;
         this.peso = peso;
-        this.puntos = new Puntos2();
-        this.games = new Puntos2();
+        this.puntos = new Puntos();
+        this.games = new Puntos();
     }
 
     public String getNombre() {
@@ -94,19 +94,19 @@ public class Jugador {
         this.peso = peso;
     }
 
-    public Puntos2 getPuntos() {
+    public Puntos getPuntos() {
         return puntos;
     }
 
-    public void setPuntos2(Puntos2 puntos) {
+    public void setPuntos(Puntos puntos) {
         this.puntos = puntos;
     }
 
-    public Puntos2 getGames2() {
+    public Puntos getGames() {
         return games;
     }
 
-    public void setGames2(Puntos2 games) {
+    public void setGames(Puntos games) {
         this.games = games;
     }
     
