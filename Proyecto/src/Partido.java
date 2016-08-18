@@ -1,33 +1,29 @@
 
-
-
 public class Partido {
 
     public static int sets_max;
-    
+
     public static int diferencia;
-    
+
     public static int errores;
-    
+
     private Puntos puntos;
-    
-    private static Jugador[] jugador = new Jugador [2];
-    
-    public static Jugador[] getJugador(){
+
+    private static Jugador[] jugador = new Jugador[2];
+
+    public static Jugador[] getJugador() {
         return jugador;
     }
-    
-    
-        
-    public Partido(){
-        
+
+    public Partido() {
+
     }
-    
+
     public Partido(int sets_max, int diferencia, Puntos puntos) {
         Partido.sets_max = sets_max;
         Partido.diferencia = diferencia;
         puntos = new Puntos();
-        
+
     }
 
     public static int getSets_max() {
@@ -53,70 +49,68 @@ public class Partido {
     public void setPuntos(Puntos puntos) {
         this.puntos = puntos;
     }
-    
-   
-    public static void duración_partido(){
-        if (Caracteristica_partido.jComboBox.getSelectedIndex() == 1){
+
+    public static void duración_partido() {
+        if (Caracteristica_partido.jComboBox.getSelectedIndex() == 1) {
             Partido.sets_max = 1;
         }
-        if (Caracteristica_partido.jComboBox.getSelectedIndex() == 2){
+        if (Caracteristica_partido.jComboBox.getSelectedIndex() == 2) {
             Partido.sets_max = 3;
-            
+
         }
-        if (Caracteristica_partido.jComboBox.getSelectedIndex() == 3){
+        if (Caracteristica_partido.jComboBox.getSelectedIndex() == 3) {
             Partido.sets_max = 5;
-            
+
         }
     }
-    
-    public static void diferencia(){
-        if (Caracteristica_partido.jDiferencia.isSelected() == true){
+
+    public static void diferencia() {
+        if (Caracteristica_partido.jDiferencia.isSelected() == true) {
             Partido.diferencia = 1;
         }
-        if (Caracteristica_partido.jDiferenciaNo.isSelected() == true){
+        if (Caracteristica_partido.jDiferenciaNo.isSelected() == true) {
             Partido.diferencia = 0;
         }
     }
-    
-    public boolean addPersona(Jugador partido){
-        for (int i=0; i<jugador.length; i++){
-            if (jugador[i]== null){
+
+    public boolean addPersona(Jugador partido) {
+        for (int i = 0; i < jugador.length; i++) {
+            if (jugador[i] == null) {
                 jugador[i] = partido;
                 return true;
             }
         }
         return false;
     }
-    
-    public Jugador findByNombre(String nombre){
-        for (int i=0; i< jugador.length;i++) {
+
+    public Jugador findByNombre(String nombre) {
+        for (int i = 0; i < jugador.length; i++) {
             if (jugador[i].getNombre().equals(nombre)) {
                 return jugador[i];
             }
-            
+
         }
         return null;
     }
-    
 
-    public int cantidadCargada(){
+    public int cantidadCargada() {
         int count = 0;
-        for (int i=0; i<jugador.length; i++){
-            if (jugador[i]!= null){
+        for (int i = 0; i < jugador.length; i++) {
+            if (jugador[i] != null) {
                 count++;
             }
         }
         return count;
     }
-    
-    public static void game_ganado(){
-        for (int i=0;i<jugador.length;i++){
-            if (jugador[0].getPuntos()  != jugador[1].getPuntos()){
-                System.out.println(jugador[1].getPuntos() + "");
-                jugador[0].aumentar_games();
-                return;
-            }       
+
+    public static void game_ganado() {
+        System.out.println(jugador[1].getPunto() + "");
+        if ((jugador[1].getPunto().getPunto() == 40) && (jugador[0].getPunto().getPunto() != 40)) {
+            jugador[0].vale_0();
+            jugador[1].vale_0();
+            System.out.println(jugador[0].getPunto() + "PUNTOS DEL JUGADOR" + jugador[0].getNombre());
+            jugador[0].aumentar_games();
+            return;
         }
     }
-    
 }
