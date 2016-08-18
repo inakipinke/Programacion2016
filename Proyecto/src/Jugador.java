@@ -122,20 +122,20 @@ public class Jugador {
  
     public void aumentar_Puntos() {
         if (punto.getPunto() == 0) {
-            punto.setPunto(15);
-            System.err.println(nombre + punto.getPunto() + "PUNTOS");
+            punto.setPunto(15);   
+            Partido.cambiar_marcador();
             return;
 
         }
         if (punto.getPunto() == 15) {
             punto.setPunto(30);
-            System.err.println(nombre + punto.getPunto() + "PUNTOS");
+            Partido.cambiar_marcador();
             return;
 
         }
         if (punto.getPunto() == 30) {
             punto.setPunto(40);
-            System.err.println(nombre + punto.getPunto() + "PUNTOS");
+            Partido.cambiar_marcador();
             return;
 
         }
@@ -147,19 +147,17 @@ public class Jugador {
 
     public void aumentar_games() {        
         punto.setGames(punto.getGames() + 1);
-        System.err.println(nombre + "" + punto.getGames() + " GAMES ");
-        punto.setPunto(punto.getPunto() - punto.getPunto());
+        Partido.cambiar_marcador();
         if (punto.getGames() == 6) {
-            aumentar_sets();
+            Partido.set_ganado();
             return;
         }
         return;
     }
 
     public void aumentar_sets() {
-        punto.setGames(punto.getGames() - punto.getGames());
-        punto.setPunto(punto.getPunto() - punto.getPunto());
         punto.setSets(punto.getSets() + 1);
+        Partido.cambiar_marcador();
         ganar();
     }
 
@@ -175,7 +173,12 @@ public class Jugador {
     }
     
     public void vale_0(){
-        punto.setPunto(0);
+        punto.setPunto(punto.getPunto() - punto.getPunto());
+        Partido.cambiar_marcador();
     }
 
+    public void vale_0_games(){
+        punto.setGames(punto.getGames() - punto.getGames());
+        Partido.cambiar_marcador();
+    }
 }
