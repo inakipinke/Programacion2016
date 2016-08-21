@@ -181,4 +181,19 @@ public class Jugador {
         punto.setGames(punto.getGames() - punto.getGames());
         Partido.cambiar_marcador();
     }
+    
+    public void deuce(){
+        Partido.aumentar_deuce();
+    }
+    
+    public void aumentar_games_por_deuce(){
+        punto.setGames(punto.getGames() + 1);
+        Partido.cambiar_marcador();
+        if (punto.getGames() == 6) {
+            Partido.set_ganado();
+            return;
+        }
+        return;
+    
+    }
 }

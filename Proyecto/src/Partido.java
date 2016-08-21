@@ -102,15 +102,126 @@ public class Partido {
         }
         return count;
     }
+    
+    public static void cambiar_marcador(){
+        Marcador.jPuntos1.setText(jugador[0].getPunto().getPunto() + "");
+        Marcador.jGames1.setText(jugador[0].getGames().getGames() + "");
+        Marcador.jSets1.setText(jugador[0].getSets().getSets() + "");
+            
+        Marcador.jPuntos2.setText(jugador[1].getPunto().getPunto() + "");
+        Marcador.jGames2.setText(jugador[1].getGames().getGames() + "");
+        Marcador.jSets2.setText(jugador[1].getSets().getSets() + "");
+    }
 
     public static void game_ganado() {
-        System.out.println(jugador[1].getPunto() + "");
         if ((jugador[1].getPunto().getPunto() == 40) && (jugador[0].getPunto().getPunto() != 40)) {
             jugador[0].vale_0();
             jugador[1].vale_0();
-            System.out.println(jugador[0].getPunto() + "PUNTOS DEL JUGADOR" + jugador[0].getNombre());
-            jugador[0].aumentar_games();
+            jugador[1].aumentar_games();        
             return;
         }
+        if ((jugador[0].getPunto().getPunto() == 40) && (jugador[1].getPunto().getPunto() != 40)) {
+            jugador[0].vale_0();
+            jugador[1].vale_0();
+            jugador[0].aumentar_games();
+            
+            return;
+        }
+        
     }
+    
+    public static void set_ganado(){
+        if (jugador[0].getPunto().getGames() == 6 && jugador[1].getPunto().getGames() != 6){         
+            jugador[1].vale_0();
+            jugador[1].vale_0_games();
+            jugador[0].vale_0();
+            jugador[0].vale_0_games();
+            jugador[0].aumentar_sets();
+            
+            
+        }
+        if (jugador[1].getPunto().getGames() == 6 && jugador[0].getPunto().getGames() != 6){
+            jugador[0].vale_0_games();
+            jugador[0].vale_0();
+            jugador[1].vale_0_games();
+            jugador[0].vale_0();
+            jugador[1].aumentar_sets();
+            
+        }
+    }
+    
+    public static void deuce_ju1(){
+        if (jugador[0].getPunto().getPunto() == 40 && jugador[1].getPunto().getPunto() == 40){
+            jugador[0].vale_0();
+            jugador[1].vale_0();
+            Deuce deuce = new Deuce();
+            deuce.setVisible(true);
+        }
+    }
+    
+    public static void deuce_ju2(){
+        if (jugador[1].getPunto().getPunto() == 40 && jugador[0].getPunto().getPunto() == 40){
+            jugador[0].vale_0();
+            jugador[1].vale_0();
+            Deuce deuce = new Deuce();
+            deuce.setVisible(true);
+        }
+    }
+    
+    public static void marcador_deuce(){
+        Deuce.jDeuce.setText(jugador[0].getPunto().getPunto() +  "     -     " + jugador[1].getPunto().getPunto());
+        
+    }
+    
+    public static void aumentar_deuce(){
+        if (jugador[0].getPunto().getPunto() == 0 && jugador[1].getPunto().getPunto() == 0){
+            jugador[0].getPunto().setPunto(1);
+            marcador_deuce();
+            return;
+        }
+        if (jugador[0].getPunto().getPunto() == 1 && jugador[1].getPunto().getPunto() == 0){
+            jugador[0].vale_0();
+            jugador[1].vale_0();
+            jugador[1].vale_0_games();
+            jugador[0].vale_0_games();
+            jugador[0].aumentar_games_por_deuce();
+            Deuce deuce = new Deuce();
+            deuce.setVisible(false);
+            return;
+        }  
+        if (jugador[0].getPunto().getPunto() == 1 && jugador[1].getPunto().getPunto() == 1){
+            jugador[0].getPunto().setPunto(0);
+            jugador[1].getPunto().setPunto(0);
+            marcador_deuce();
+            return;
+        }
+    
+       //SEGUNDO JUGADOR
+        if (jugador[0].getPunto().getPunto() == 0 && jugador[1].getPunto().getPunto() == 0){
+            jugador[1].getPunto().setPunto(1);
+            marcador_deuce();
+            return;
+        }
+        
+        if (jugador[1].getPunto().getPunto() == 1 && jugador[1].getPunto().getPunto() == 0){
+            jugador[0].vale_0();
+            jugador[1].vale_0();
+            jugador[1].vale_0_games();
+            jugador[0].vale_0_games();
+            jugador[1].aumentar_games_por_deuce();
+            Deuce deuce = new Deuce();
+            deuce.setVisible(false);
+            return;
+            
+        }
+         
+         if (jugador[0].getPunto().getPunto() == 1 && jugador[1].getPunto().getPunto() == 1){
+            jugador[0].getPunto().setPunto(0);
+            jugador[1].getPunto().setPunto(0);
+            marcador_deuce();
+            return;
+        }
+        
+    }
+    
 }
