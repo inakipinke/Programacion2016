@@ -175,40 +175,37 @@ public class Partido {
     
     public static void aumentar_deuce(){
         if (jugador[0].getPunto().getPunto() == 0 && jugador[1].getPunto().getPunto() == 0){
-            jugador[0].getPunto().setPunto(1);
+            jugador[0].aumentar_ventaja();
             marcador_deuce();
             return;
         }
         if (jugador[0].getPunto().getPunto() == 1 && jugador[1].getPunto().getPunto() == 0){
             jugador[0].vale_0();
             jugador[1].vale_0();
-            jugador[1].vale_0_games();
-            jugador[0].vale_0_games();
             jugador[0].aumentar_games_por_deuce();
             Deuce deuce = new Deuce();
             deuce.setVisible(false);
             return;
         }  
         if (jugador[0].getPunto().getPunto() == 1 && jugador[1].getPunto().getPunto() == 1){
-            jugador[0].getPunto().setPunto(0);
-            jugador[1].getPunto().setPunto(0);
+            jugador[0].vale_0();
+            jugador[1].vale_0();
             marcador_deuce();
             return;
         }
-    
+    }
+    public static void aumentar_deuce2(){    
        //SEGUNDO JUGADOR
         if (jugador[0].getPunto().getPunto() == 0 && jugador[1].getPunto().getPunto() == 0){
-            jugador[1].getPunto().setPunto(1);
+            jugador[1].aumentar_ventaja();
             marcador_deuce();
             return;
         }
         
-        if (jugador[1].getPunto().getPunto() == 1 && jugador[1].getPunto().getPunto() == 0){
+        if (jugador[1].getPunto().getPunto() == 1 && jugador[0].getPunto().getPunto() == 0){
             jugador[0].vale_0();
             jugador[1].vale_0();
-            jugador[1].vale_0_games();
-            jugador[0].vale_0_games();
-            jugador[1].aumentar_games_por_deuce();
+            jugador[1].aumentar_games();
             Deuce deuce = new Deuce();
             deuce.setVisible(false);
             return;
@@ -216,8 +213,8 @@ public class Partido {
         }
          
          if (jugador[0].getPunto().getPunto() == 1 && jugador[1].getPunto().getPunto() == 1){
-            jugador[0].getPunto().setPunto(0);
-            jugador[1].getPunto().setPunto(0);
+            jugador[0].vale_0();
+            jugador[1].vale_0();
             marcador_deuce();
             return;
         }

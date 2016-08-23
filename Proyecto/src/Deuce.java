@@ -107,7 +107,7 @@ public class Deuce extends javax.swing.JFrame {
         Partido partido = new Partido();
         Jugador[] jugador = Partido.getJugador();
         Puntos puntos = new Puntos();   
-        jugador[1].deuce();
+        jugador[1].deuce2();
     }//GEN-LAST:event_jPunto_jugador2MouseClicked
    
     public static void main(String args[]) {

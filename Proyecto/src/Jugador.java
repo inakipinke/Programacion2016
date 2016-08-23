@@ -186,6 +186,10 @@ public class Jugador {
         Partido.aumentar_deuce();
     }
     
+    public void deuce2(){
+        Partido.aumentar_deuce2();
+    }
+    
     public void aumentar_games_por_deuce(){
         punto.setGames(punto.getGames() + 1);
         Partido.cambiar_marcador();
@@ -195,5 +199,9 @@ public class Jugador {
         }
         return;
     
+    }
+    
+    public void aumentar_ventaja(){
+        punto.setPunto(1);
     }
 }
