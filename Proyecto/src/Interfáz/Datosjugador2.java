@@ -702,6 +702,7 @@ public class Datosjugador2 extends javax.swing.JFrame {
         jugador.setAño_de_nacimiento(año_de_nacimiento);
         jugador.setPunto(puntos);
         jugador.setGames(puntos);
+        jugador.setSets(puntos);
        
         
         System.out.println("ERROR !!!");
@@ -744,6 +745,7 @@ public class Datosjugador2 extends javax.swing.JFrame {
              System.out.println("Ese numero no se encuentra en el sistema");
         }
         */
+        
         this.setVisible(false);
         Caracteristica_partido caracteristicas = new Caracteristica_partido();
         caracteristicas.setVisible(true);

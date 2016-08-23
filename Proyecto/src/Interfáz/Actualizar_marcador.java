@@ -139,6 +139,7 @@ public class Actualizar_marcador extends javax.swing.JFrame {
         Partido partido = new Partido();
         Jugador[] jugador = Partido.getJugador();
         Puntos puntos = new Puntos();
+<<<<<<< HEAD:Proyecto/src/Interfáz/Actualizar_marcador.java
         
         
         
@@ -164,8 +165,20 @@ public class Actualizar_marcador extends javax.swing.JFrame {
             }
 
             
+=======
+        if (jCombo.getSelectedIndex() == 1){    
+            jugador[0].aumentar_Puntos();
+            Partido.deuce_ju1();
         }
         
+        //Anotador anotador = new Anotador();
+        //anotador.setVisible(true);       
+        
+        if (jCombo.getSelectedIndex() == 2){          
+            jugador[1].aumentar_Puntos();
+            Partido.deuce_ju2();
+>>>>>>> 5bf8e62556bc27892d47d5d8139f9a5833e93cfc:Proyecto/src/Actualizar_marcador.java
+        }
     }//GEN-LAST:event_btnGuardarMouseClicked
 
     private void btnGuardarActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnGuardarActionPerformed

@@ -124,20 +124,20 @@ public class Jugador {
  
     public void aumentar_Puntos() {
         if (punto.getPunto() == 0) {
-            punto.setPunto(15);
-            System.err.println(nombre + punto.getPunto() + "PUNTOS");
+            punto.setPunto(15);   
+            Partido.cambiar_marcador();
             return;
 
         }
         if (punto.getPunto() == 15) {
             punto.setPunto(30);
-            System.err.println(nombre + punto.getPunto() + "PUNTOS");
+            Partido.cambiar_marcador();
             return;
 
         }
         if (punto.getPunto() == 30) {
             punto.setPunto(40);
-            System.err.println(nombre + punto.getPunto() + "PUNTOS");
+            Partido.cambiar_marcador();
             return;
 
         }
@@ -149,20 +149,24 @@ public class Jugador {
 
     public void aumentar_games() {        
         punto.setGames(punto.getGames() + 1);
-        System.err.println(nombre + "" + punto.getGames() + " GAMES ");
-        punto.setPunto(punto.getPunto() - punto.getPunto());
-        System.out.println(punto.getPunto() + "");
+        Partido.cambiar_marcador();
         if (punto.getGames() == 6) {
-            aumentar_sets();
+            Partido.set_ganado();
             return;
         }
         return;
     }
 
+<<<<<<< HEAD:Proyecto/src/Clases/Jugador.java
     public void aumentar_sets() {   
         punto.setGames(punto.getGames() - punto.getGames());
         punto.setPunto(punto.getPunto() - punto.getPunto());
         punto.setSets(punto.getSets() - punto.getSets());
+=======
+    public void aumentar_sets() {
+        punto.setSets(punto.getSets() + 1);
+        Partido.cambiar_marcador();
+>>>>>>> 5bf8e62556bc27892d47d5d8139f9a5833e93cfc:Proyecto/src/Jugador.java
         ganar();
     }
 
@@ -178,8 +182,42 @@ public class Jugador {
     }
     
     public void vale_0(){
+<<<<<<< HEAD:Proyecto/src/Clases/Jugador.java
         punto.setPunto(0);
         System.out.println(punto.getPunto() + "");
     }
    
+=======
+        punto.setPunto(punto.getPunto() - punto.getPunto());
+        Partido.cambiar_marcador();
+    }
+
+    public void vale_0_games(){
+        punto.setGames(punto.getGames() - punto.getGames());
+        Partido.cambiar_marcador();
+    }
+    
+    public void deuce(){
+        Partido.aumentar_deuce();
+    }
+    
+    public void deuce2(){
+        Partido.aumentar_deuce2();
+    }
+    
+    public void aumentar_games_por_deuce(){
+        punto.setGames(punto.getGames() + 1);
+        Partido.cambiar_marcador();
+        if (punto.getGames() == 6) {
+            Partido.set_ganado();
+            return;
+        }
+        return;
+    
+    }
+    
+    public void aumentar_ventaja(){
+        punto.setPunto(1);
+    }
+>>>>>>> 5bf8e62556bc27892d47d5d8139f9a5833e93cfc:Proyecto/src/Jugador.java
 }
