@@ -98,7 +98,11 @@ public class Deuce extends javax.swing.JFrame {
         Jugador[] jugador = Partido.getJugador();
         Puntos puntos = new Puntos();   
         jugador[0].deuce();
-        
+        if (Partido.volver == 2){
+            Partido.volver = 0;
+            this.setVisible(false);
+            
+        }
         
         
     }//GEN-LAST:event_jPunto_Jugador1MouseClicked
@@ -108,6 +112,12 @@ public class Deuce extends javax.swing.JFrame {
         Jugador[] jugador = Partido.getJugador();
         Puntos puntos = new Puntos();   
         jugador[1].deuce2();
+        if (Partido.volver == 2){
+            Partido.volver = 0;
+            this.setVisible(false);
+            
+        }
+        
     }//GEN-LAST:event_jPunto_jugador2MouseClicked
    
     public static void main(String args[]) {
