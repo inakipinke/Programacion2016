@@ -1,12 +1,6 @@
 package Clases;
+import Interfáz.*;
 
-<<<<<<< HEAD:Proyecto/src/Clases/Partido.java
-
-import Interfáz.Actualizar_marcador;
-import Clases.Jugador;
-
-=======
->>>>>>> 5bf8e62556bc27892d47d5d8139f9a5833e93cfc:Proyecto/src/Partido.java
 public class Partido {
 
     public static int sets_max;
@@ -14,9 +8,10 @@ public class Partido {
     public static int diferencia;
 
     public static int errores;
-
+    
+    public static int volver;
+    
     private Puntos puntos;
-<<<<<<< HEAD:Proyecto/src/Clases/Partido.java
     
     private Actualizar_marcador clase;
     
@@ -25,30 +20,8 @@ public class Partido {
     public static Jugador[] getJugador(){
         return jugador;
     }
-    
-    
-    
-        
-    public Partido(){
-        
-=======
-
-    private static Jugador[] jugador = new Jugador[2];
-
-    public static Jugador[] getJugador() {
-        return jugador;
-    }
 
     public Partido() {
-
->>>>>>> 5bf8e62556bc27892d47d5d8139f9a5833e93cfc:Proyecto/src/Partido.java
-    }
-
-    public Partido(int sets_max, int diferencia, Puntos puntos) {
-        Partido.sets_max = sets_max;
-        Partido.diferencia = diferencia;
-        puntos = new Puntos();
-
     }
 
     public static int getSets_max() {
@@ -127,19 +100,20 @@ public class Partido {
         }
         return count;
     }
-<<<<<<< HEAD:Proyecto/src/Clases/Partido.java
+//<<<<<<< HEAD:Proyecto/src/Clases/Partido.java
 
-    public static void game_ganado(){
-        for (int i=0;i<jugador.length;i++){
-            if (jugador[0].getPunto()  != jugador[1].getPunto()){
-                System.out.println(jugador[1].getPunto() + "");
-                jugador[1].vale_0();
-                jugador[0].vale_0();
-                jugador[0].aumentar_games();
-                return;
-            }       
-=======
-    
+//    public static void game_ganado(){
+//        for (int i=0;i<jugador.length;i++){
+//            if (jugador[0].getPunto()  != jugador[1].getPunto()){
+//                System.out.println(jugador[1].getPunto() + "");
+//                jugador[1].vale_0();
+//                jugador[0].vale_0();
+//                jugador[0].aumentar_games();
+//                return;
+//            }  
+//        }
+//    }
+  
     public static void cambiar_marcador(){
         Marcador.jPuntos1.setText(jugador[0].getPunto().getPunto() + "");
         Marcador.jGames1.setText(jugador[0].getGames().getGames() + "");
@@ -161,52 +135,46 @@ public class Partido {
             jugador[0].vale_0();
             jugador[1].vale_0();
             jugador[0].aumentar_games();
-            
-            return;
         }
+    }
+     
+    
+//    public static void set_ganado() {
+//        if (jugador[0].getPunto().getGames() == 6 && jugador[1].getPunto().getGames() != 6){         
+//            jugador[1].vale_0();
+//            jugador[1].vale_0_games();
+//            jugador[0].vale_0();
+//            jugador[0].vale_0_games();
+//            jugador[0].aumentar_sets();     
+//        }
+//        if (jugador[1].getPunto().getGames() == 6 && jugador[0].getPunto().getGames() != 6){
+//            jugador[0].vale_0_games();
+//            jugador[0].vale_0();
+//            jugador[1].vale_0_games();
+//            jugador[0].vale_0();
+//            jugador[1].aumentar_sets();    
         
-    }
+
     
-    public static void set_ganado(){
-        if (jugador[0].getPunto().getGames() == 6 && jugador[1].getPunto().getGames() != 6){         
-            jugador[1].vale_0();
-            jugador[1].vale_0_games();
-            jugador[0].vale_0();
-            jugador[0].vale_0_games();
-            jugador[0].aumentar_sets();
-            
-            
-        }
-        if (jugador[1].getPunto().getGames() == 6 && jugador[0].getPunto().getGames() != 6){
-            jugador[0].vale_0_games();
-            jugador[0].vale_0();
-            jugador[1].vale_0_games();
-            jugador[0].vale_0();
-            jugador[1].aumentar_sets();
-            
-        }
-    }
-    
-    public static void deuce_ju1(){
-        if (jugador[0].getPunto().getPunto() == 40 && jugador[1].getPunto().getPunto() == 40){
-            jugador[0].vale_0();
-            jugador[1].vale_0();
-            Deuce deuce = new Deuce();
-            deuce.setVisible(true);
->>>>>>> 5bf8e62556bc27892d47d5d8139f9a5833e93cfc:Proyecto/src/Partido.java
-        }
-    }
-    
-    public static void deuce_ju2(){
-        if (jugador[1].getPunto().getPunto() == 40 && jugador[0].getPunto().getPunto() == 40){
-            jugador[0].vale_0();
-            jugador[1].vale_0();
-            Deuce deuce = new Deuce();
-            deuce.setVisible(true);
-        }
-    }
-    
-    public static void marcador_deuce(){
+//    public static void deuce_ju1(){
+//        if (jugador[0].getPunto().getPunto() == 40 && jugador[1].getPunto().getPunto() == 40){
+//            jugador[0].vale_0();
+//            jugador[1].vale_0();
+//            Deuce deuce = new Deuce();
+//            deuce.setVisible(true);
+//}
+//
+//    
+//    
+//    public static void deuce_ju2(){
+//        if (jugador[1].getPunto().getPunto() == 40 && jugador[0].getPunto().getPunto() == 40){
+//            jugador[0].vale_0();
+//            jugador[1].vale_0();
+//            Deuce deuce = new Deuce();
+//            deuce.setVisible(true);
+//        }
+   
+   public static void marcador_deuce(){
         Deuce.jDeuce.setText(jugador[0].getPunto().getPunto() +  "     -     " + jugador[1].getPunto().getPunto());
         
     }
@@ -231,7 +199,10 @@ public class Partido {
             marcador_deuce();
             return;
         }
-    }
+  }
+
+
+
     public static void aumentar_deuce2(){    
        //SEGUNDO JUGADOR
         if (jugador[0].getPunto().getPunto() == 0 && jugador[1].getPunto().getPunto() == 0){

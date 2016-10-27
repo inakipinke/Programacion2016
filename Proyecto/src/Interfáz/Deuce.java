@@ -1,5 +1,5 @@
 package Interfáz;
-
+import Clases.*;
 public class Deuce extends javax.swing.JFrame {
     
     
@@ -96,7 +96,7 @@ public class Deuce extends javax.swing.JFrame {
     }// </editor-fold>//GEN-END:initComponents
 
     private void jPunto_Jugador1MouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_jPunto_Jugador1MouseClicked
-        Partido partido = new Partido();
+//        Partido partido = new Partido();
         Jugador[] jugador = Partido.getJugador();
         Puntos puntos = new Puntos();   
         jugador[0].deuce();

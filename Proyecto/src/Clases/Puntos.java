@@ -1,5 +1,5 @@
 package Clases;
-package 
+
 public class Puntos {
     public int puntoa;
     private int punto ;

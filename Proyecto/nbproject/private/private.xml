@@ -3,11 +3,13 @@
     <editor-bookmarks xmlns="http://www.netbeans.org/ns/editor-bookmarks/2" lastBookmarkId="0"/>
     <open-files xmlns="http://www.netbeans.org/ns/projectui-open-files/2">
         <group>
-            <file>file:/home/pinke/Escritorio/a/Programacion2016/Proyecto/src/Actualizar_marcador.java</file>
-            <file>file:/home/pinke/Escritorio/a/Programacion2016/Proyecto/src/Jugador.java</file>
-            <file>file:/home/pinke/Escritorio/a/Programacion2016/Proyecto/src/Puntos.java</file>
-            <file>file:/home/pinke/Escritorio/a/Programacion2016/Proyecto/src/Datosjugador2.java</file>
-            <file>file:/home/pinke/Escritorio/a/Programacion2016/Proyecto/src/Partido.java</file>
+            <file>file:/home/pinke/Escritorio/a/Programacion2016/Proyecto/src/Clases/Jugador.java</file>
+            <file>file:/home/pinke/Escritorio/a/Programacion2016/Proyecto/src/Clases/Puntos.java</file>
+            <file>file:/home/pinke/Escritorio/a/Programacion2016/Proyecto/src/Interfáz/Actualizar_marcador.java</file>
+            <file>file:/home/pinke/Escritorio/a/Programacion2016/Proyecto/src/Clases/Partido.java</file>
+            <file>file:/home/pinke/Escritorio/a/Programacion2016/Proyecto/src/Interfáz/Datosjugador1.java</file>
+            <file>file:/home/pinke/Escritorio/a/Programacion2016/Proyecto/src/Interfáz/Deuce.java</file>
+            <file>file:/home/pinke/Escritorio/a/Programacion2016/Proyecto/src/Interfáz/Datosjugador2.java</file>
         </group>
     </open-files>
 </project-private>

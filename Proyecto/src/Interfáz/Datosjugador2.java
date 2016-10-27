@@ -1,9 +1,5 @@
 package Interfáz;
-
-
-
-
-import Clases.Jugador;
+import Clases.*;
 
 public class Datosjugador2 extends javax.swing.JFrame {
 
@@ -659,7 +655,7 @@ public class Datosjugador2 extends javax.swing.JFrame {
              día_de_nacimiento = 31;
         }
         
-        Partido partido = new Partido();
+//        Partido partido = new Partido();
         
         
         
@@ -710,12 +706,12 @@ public class Datosjugador2 extends javax.swing.JFrame {
                
         if (errores.length()>0){
             System.out.println("ERROR !!!!");
-        }else{
-            if (partido.addPersona(jugador)){
-                        System.out.println("Persona cargada con éxito");
-                }else{
-                        System.out.println("Ya no se pueden cargar mas personas");
-                    }     
+//        }else{
+//            if (partido.addPersona(jugador)){
+//                        System.out.println("Persona cargada con éxito");
+//                }else{
+//                        System.out.println("Ya no se pueden cargar mas personas");
+//                    }     
         
     
         jNombre.setText("");

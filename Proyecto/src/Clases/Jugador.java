@@ -1,6 +1,5 @@
 package Clases;
 
-
 public class Jugador {
 
     private String nombre;
@@ -17,8 +16,8 @@ public class Jugador {
 
     //EL JUGADOR TIENE SU PROPIO MARCADOR DONDE SE VEN REFLEJADOS LOS PUNTOS QUE HAYA ANOTADO.
     
-    public Jugador() {
-    }
+//    public Jugador() {
+//    }
 
     public Jugador(String nombre, Puntos punto,Puntos games,Puntos sets, String apellido, int año_de_nacimiento, int mes_de_nacimiento, int día_de_nacimiento, String nacionalidad, Float altura, Float peso) {
         this.nombre = nombre;
@@ -157,17 +156,17 @@ public class Jugador {
         return;
     }
 
-<<<<<<< HEAD:Proyecto/src/Clases/Jugador.java
+//<<<<<<< HEAD:Proyecto/src/Clases/Jugador.java
     public void aumentar_sets() {   
         punto.setGames(punto.getGames() - punto.getGames());
         punto.setPunto(punto.getPunto() - punto.getPunto());
         punto.setSets(punto.getSets() - punto.getSets());
-=======
-    public void aumentar_sets() {
-        punto.setSets(punto.getSets() + 1);
-        Partido.cambiar_marcador();
->>>>>>> 5bf8e62556bc27892d47d5d8139f9a5833e93cfc:Proyecto/src/Jugador.java
-        ganar();
+//=======
+//    public void aumentar_sets() {
+//        punto.setSets(punto.getSets() + 1);
+//        Partido.cambiar_marcador();
+//>>>>>>> 5bf8e62556bc27892d47d5d8139f9a5833e93cfc:Proyecto/src/Jugador.java
+//        ganar();
     }
 
     public void ganar() {
@@ -182,13 +181,13 @@ public class Jugador {
     }
     
     public void vale_0(){
-<<<<<<< HEAD:Proyecto/src/Clases/Jugador.java
+//<<<<<<< HEAD:Proyecto/src/Clases/Jugador.java
         punto.setPunto(0);
         System.out.println(punto.getPunto() + "");
-    }
+    
    
-=======
-        punto.setPunto(punto.getPunto() - punto.getPunto());
+
+    punto.setPunto(punto.getPunto() - punto.getPunto());
         Partido.cambiar_marcador();
     }
 
@@ -219,5 +218,5 @@ public class Jugador {
     public void aumentar_ventaja(){
         punto.setPunto(1);
     }
->>>>>>> 5bf8e62556bc27892d47d5d8139f9a5833e93cfc:Proyecto/src/Jugador.java
+//>>>>>>> 5bf8e62556bc27892d47d5d8139f9a5833e93cfc:Proyecto/src/Jugador.java
 }
